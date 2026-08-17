@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Je définis l'encodage en UTF-8 pour que les accents s'affichent bien -->
+    <meta charset="UTF-8">
+    <!-- Je rends le site responsive sur mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Je donne un titre à l'onglet du navigateur -->
+    <title>Lucrezia Ogah - Portfolio</title>
+    <!-- Je lie ma feuille de style CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Je définis l'icône qui apparaît dans l'onglet du navigateur (favicon) -->
+    <link rel="icon" href="image/Lyo.png">
+    <!-- J'importe Font Awesome pour avoir des icônes (Instagram, GitHub, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- J'importe la police Inter depuis Google Fonts pour un rendu moderne -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 
+        HEADER : la barre de navigation fixe en haut de la page.
+        Elle reste visible même quand on scroll.
+    -->
+    <header id="main-header">
+        <div class="conteneur">
+            <nav>
+                <!-- Je place mon logo à gauche -->
+                <div class="logo">
+                    <img src="image/Lyo.png" alt="Logo LYO">
+                </div>
+                <!-- 
+                    Je crée la liste des liens de navigation.
+                    Chaque lien pointe vers une section de la page (via #id).
+                    Le lien "Contact" a une classe spéciale nav-cta pour le mettre en valeur.
+                -->
+                <ul class="liens-nav" id="nav-menu">
+                    <li><a href="#accueil" class="actif">Accueil</a></li>
+                    <li><a href="#apropos">À propos</a></li>
+                    <li><a href="#activites">Activités</a></li>
+                    <li><a href="#bts">BTS SIO</a></li>
+                    <li><a href="#competences">Compétences</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#stages">Stages</a></li>
+                    <li><a href="#stage">Stage KBSunrise</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="VeilleTechnoLucre.html">Veille</a></li>
+                    <li><a href="#projetpro">Projet Pro</a></li>
+                    <li><a href="#contact" class="nav-cta">Contact</a></li>
+                </ul>
+                <!-- 
+                    Je regroupe les actions de droite : 
+                    - le bouton pour changer le thème (clair/sombre)
+                    - le menu burger pour les écrans mobiles
+                -->
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="burger" id="burger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 
+        SECTION HERO (Accueil)
+        C'est la première chose que l'on voit en arrivant sur la page.
+        Je me présente et je donne des statistiques sur mon parcours.
+    -->
+    <section id="accueil" class="hero">
+        <div class="conteneur">
+            <div class="contenu-hero">
+                <!-- Un petit badge pour annoncer ma formation -->
+                <span class="hero-badge">Étudiante BTS SIO SLAM</span>
+                <!-- Mon titre avec mon prénom et nom en couleur accent -->
+                <h1>Bonjour,<br> je m'appelle <span style="color: var(--accent);">Lucrezia Ogah</span></h1>
+                <!-- Une phrase qui s'écrit comme si c'était une machine à écrire -->
+                <div class="machine-a-ecrire">Je suis <span>Développeuse Web | Profil Dev/Ops & Cybersécurité</span></div>
+                <!-- Une brève description de ce qui me passionne -->
+                <p class="hero-description">Passionnée par le développement d'applications web et l'infrastructure Linux, je combine créativité et technique pour construire des solutions innovantes.</p>
+                <!-- Je crée trois boutons d'appel à l'action -->
+                <div class="boutons-cta">
+                    <a href="#contact" class="btn btn-principal">Me contacter</a>
+                    <a href="#projets" class="btn btn-secondaire">Voir mes projets</a>
+                    <a href="image/CV_LucreziaOgah.pdf" target="_blank" class="btn btn-cv"><i class="fas fa-file-pdf"></i> CV</a>
+                </div>
+                <!-- Mes liens vers les réseaux sociaux -->
+                <div class="liens-sociaux">
+                    <a href="https://www.instagram.com/lyo.dev/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/lucrezia-ogah-a3b02b330/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Lyo563"  target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                <!-- Des statistiques sur mes certifications, projets et stages -->
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Certifications</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number">5</span>
+                        <span class="stat-label">Projets</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Stages</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 
+                À droite de la page, je place ma photo de profil
+                avec des icônes qui flottent autour pour faire plus dynamique.
+            -->
+            <div class="hero-image">
+                <div class="hero-avatar">
+                    <img src="image/Lucrezia.jpeg" alt="Lucrezia Ogah">
+                    <div class="avatar-ring"></div>
+                </div>
+                <div class="hero-floating-icons">
+                    <div class="float-icon"><i class="fab fa-wordpress"></i></div>
+                    <div class="float-icon"><i class="fab fa-linux"></i></div>
+                    <div class="float-icon"><i class="fab fa-docker"></i></div>
+                    <div class="float-icon"><i class="fas fa-code"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        SECTION À PROPOS 
+        Je me présente plus en détail : ma formation, ce que j'ai appris.
+    -->
+    <section id="apropos" class="apropos">
+        <div class="conteneur">
+            <!-- L'en-tête de section avec le numéro et le titre -->
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2>À propos de moi</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contenu-apropos">
+                <!-- Le texte de présentation -->
+                <div class="texte-apropos">
+                    <p>Je suis une étudiante en 2ème année du <strong>BTS Services Informatiques aux Organisations</strong>, option <strong>Solutions Logicielles et Application Métiers (SLAM)</strong>. Passionnée par le développement web et l'administration systèmes, je combine compétences techniques en développement et en infrastructure.</p>
+                    <p>Mon parcours académique et mes expériences professionnelles m'ont permis de maîtriser l'écosystème WordPress, le développement front-end/back-end, la gestion de projets web complets, ainsi que l'administration de serveurs Linux, la conteneurisation avec Docker et la sécurisation d'infrastructures.</p>
+                    <p>Je suis constamment à la recherche de nouveaux défis et opportunités d'apprentissage pour enrichir mes compétences et contribuer à des projets porteurs de sens.</p>
+                    <div class="apropos-cta">
+                        <a href="image/CV_LucreziaOgah.pdf" target="_blank" class="btn btn-cv"><i class="fas fa-file-pdf"></i> Télécharger mon CV</a>
+                    </div>
+                </div>
+                <!-- Ma photo de profil avec un effet de bordure décorative -->
+                <img src="image/Lucrezia.jpeg" alt="Lucrezia Ogah">
+                <div class="image-border"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        SECTION ACTIVITÉS EXTRA-SCOLAIRES
+        Je présente ce que je fais en dehors des cours : sport, musique, etc.
+    -->
+    <section id="activites" class="activites">
+        <div class="conteneur">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2>Mes Activités Extra-Scolaires</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Des passions qui forgent ma personnalité et mes compétences</p>
+            </div>
+            <!-- Je crée une grille de cartes pour chaque activité -->
+            <div class="grille-activites">
+                <!-- Carte 1 : Football -->
+                <div class="carte-activite">
+                    <h3>Football - Joueuse</h3>
+                    <div class="activite-meta">
+                        <span><i class="fas fa-trophy"></i> Régional 1 Féminine</span>
+                        <span><i class="fas fa-calendar-alt"></i> 2018 - 2025</span>
+                    </div>
+                    <p>Défenseur central au <strong>GRENOBLE FOOT 38</strong>. Le football m'a appris l'esprit d'équipe, la vision stratégique, l'anticipation et la cohésion.</p>
+                    <div class="competences-acquises">
+                        <span>Esprit d'équipe</span>
+                        <span>Leadership</span>
+                        <span>Stratégie</span>
+                        <span>Résilience</span>
+                    </div>
+                </div>
+
+                <!-- Carte 2 : Arbitre -->
+                <div class="carte-activite">
+                    <h3>Arbitre de Football</h3>
+                    <div class="activite-meta">
+                        <span><i class="fas fa-users"></i> U15 D1 & D2</span>
+                        <span><i class="fas fa-calendar-alt"></i> 2024 - 2025</span>
+                    </div>
+                    <p>Arbitre officielle en championnats U15 masculins. Une expérience qui développe la <strong>prise de décision rapide</strong>, la gestion du stress et l'autorité.</p>
+                    <div class="competences-acquises">
+                        <span>Prise de décision</span>
+                        <span>Gestion du stress</span>
+                        <span>Autorité</span>
+                        <span>Pédagogie</span>
+                    </div>
+                </div>
+
+                <!-- Carte 3 : Musique -->
+                <div class="carte-activite">
+                    <h3>Guitariste & Compositrice</h3>
+                    <div class="activite-meta">
+                        <span><i class="fas fa-music"></i> Mélomane</span>
+                        <span><i class="fas fa-pen-fancy"></i> Composition</span>
+                    </div>
+                    <p>Passionnée de musique, je pratique la guitare et compose mes propres morceaux. La musique est pour moi un espace de <strong>créativité</strong> et d'expression.</p>
+                    <div class="competences-acquises">
+                        <span>Créativité</span>
+                        <span>Discipline</span>
+                        <span>Expression</span>
+                        <span>Persévérance</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        SECTION BTS SIO
+        Je présente ma formation et les compétences que j'y ai acquises.
+    -->
+    <section id="bts" class="bts">
+        <div class="conteneur">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2>Mon BTS SIO</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contenu-bts">
+                <p class="bts-intro">
+                    Le <strong>BTS Services Informatiques aux Organisations</strong> option SLAM me forme à la mise en place de solutions informatiques au sein des organisations, avec un focus particulier sur le développement et l'intégration d'applications.
+                </p>
+                <!-- Je crée une grille de cartes pour détailler les compétences du BTS -->
+                <div class="details-bts">
+                    <div class="carte-bts">
+                        <div class="carte-bts-icon"><i class="fas fa-code"></i></div>
+                        <h3>Option SLAM</h3>
+                        <p>Solutions Logicielles et Applications Métiers : Développement d'applications web et mobiles, conception de bases de données, programmation orientée objet.</p>
+                    </div>
+                    <div class="carte-bts">
+                        <div class="carte-bts-icon"><i class="fas fa-server"></i></div>
+                        <h3>Double compétence SISR</h3>
+                        <p>Administration de serveurs Linux (Debian), configuration de pare-feu (UFW), sécurisation SSH, conteneurisation avec Docker, monitoring.</p>
+                    </div>
+                    <div class="carte-bts">
+                        <div class="carte-bts-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>Compétences acquises</h3>
+                        <p>Conception et développement d'applications, gestion de bases de données, optimisation du code, déploiement de solutions logicielles.</p>
+                    </div>
+                    <div class="carte-bts">
+                        <div class="carte-bts-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Projet professionnel</h3>
+                        <p>Devenir développeuse web full-stack avec une double compétence en administration systèmes, capable de gérer l'ensemble du cycle de vie d'un projet.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        SECTION COMPÉTENCES
+        Je liste toutes les technologies et compétences que je maîtrise.
+        Chaque compétence est présentée dans une carte.
+    -->
+    <section id="competences" class="competences">
+        <div class="conteneur">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2>Mes Compétences</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Un socle technique développé en formation et enrichi par des projets personnels</p>
+            </div>
+            <div class="grille-competences">
+
+                <!-- Compétence 1 : WordPress -->
+                <div class="carte-competence">
+                    <div class="icone-competence"><i class="fab fa-wordpress"></i></div>
+                    <h3>WordPress</h3>
+                    <p>Installation, configuration et personnalisation de thèmes. Création de sites complets avec Elementor, gestion des plugins et optimisation SEO.</p>
+                </div>
+
+                <!-- Compétence 2 : Développement Web -->
+                <div class="carte-competence">
+                    <div class="icone-competence"><i class="fas fa-code"></i></div>
+                    <h3>Développement Web</h3>
+                    <p>Création de sites modernes et responsives avec HTML5, CSS3, JavaScript et PHP</p>
+                </div>
+
+                <!-- Compétence 3 : Bases de données -->
+                <div class="carte-competence">
+                    <div class="icone-competence"><i class="fas fa-database"></i></div>
+                    <h3>Bases de données</h3>
+                    <p>Conception et administration de bases de données relationnelles avec <strong>SQL</strong>, <strong>MySQL</strong> et <strong>phpMyAdmin</strong>. Optimisation des requêtes, gestion des droits utilisateurs et maintenance.</p>
+                </div>
+        
+                <!-- Compétence 4 : Java POO -->
+                <div class="carte-competence">
+                    <div class="icone-competence"><i class="fab fa-java"></i></div>
+                    <h3>POO - Java</h3>
+                    <p>Programmation Orientée Objet avec Java : classes, héritage, polymorphisme, encapsulation, interfaces. <br> 
+                    Conception d'applications structurées et maintenables.</p>
+                </div>
+
+                <!-- Compétence 5 : IHM -->
+                <div class="carte-competence">
+                    <div class="icone-competence"><i class="fas fa-desktop"></i></div>
+                    <h3>IHM - Interfaces Homme-Machine</h3>
+                    <p>Conception d'interfaces utilisateur ergonomiques et intuitives. Utilisation de Java Swing et JavaFX pour créer des applications desktop. Principes d'ergonomie, tests utilisateurs et amélioration de l'expérience utilisateur.</p>
+                </div>
+
+                <!-- Compétence 6 : Administration Linux -->
+                <div class="carte-competence">
+                    <div class="icone-competence"><i class="fab fa-linux"></i></div>
+                    <h3>Administration Linux</h3>
+                    <p>Administration de serveurs Debian, gestion des utilisateurs, des droits, monitoring des ressources et maintenance système.</p>
+                </div>
+
+                <!-- Compétence 7 : Docker -->
+                <div class="carte-competence">
+                    <div class="icone-competence"><i class="fab fa-docker"></i></div>
+                    <h3>Conteneurisation Docker</h3>
+                    <p>Installation et configuration de Docker, déploiement de services conteneurisés, gestion des volumes et des conteneurs.</p>
+                </div>
+
+                <!-- Compétence 8 : Sécurité -->
+                <div class="carte-competence">
+                    <div class="icone-competence"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Sécurité & Infrastructure</h3>
+                    <p>Sécurisation SSH, configuration de pare-feu UFW, durcissement système, certificats SSL, rédaction de politiques RGPD.</p>
+                </div>
+
+                <!-- Compétence 9 : UI/UX -->
+                <div class="carte-competence">
+                    <div class="icone-competence"><i class="fas fa-palette"></i></div>
+                    <h3>UI/UX Design</h3>
+                    <p>Création de maquettes, définition de chartes graphiques, conception d'interfaces centrées utilisateur.</p>
+                </div>
+
+                <!-- Compétence 10 : Hébergement -->
+                <div class="carte-competence">
+                    <div class="icone-competence"><i class="fas fa-cloud"></i></div>
+                    <h3>Hébergement & Déploiement</h3>
+                    <p>Configuration d'environnements de production (OVH, WAMP), gestion FTP/SSH, migration de sites, gestion des certificats SSL.</p>
+                </div>
+
+                <!-- Compétence 11 : Monitoring -->
+                <div class="carte-competence">
+                    <div class="icone-competence"><i class="fas fa-server"></i></div>
+                    <h3>Monitoring & Supervision</h3>
+                    <p>Mise en place de solutions de monitoring (Uptime Kuma, Portainer), supervision des services et maintien en condition opérationnelle.</p>
+                </div>
+
+                <!-- Compétence 12 : Cybersécurité -->
+                <div class="carte-competence">
+                    <div class="icone-competence"><i class="fas fa-user-shield"></i></div>
+                    <h3>Cybersécurité & Sensibilisation</h3>
+                    <p>Bases de la cybersécurité : analyse de risques, bonnes pratiques (MFA, mots de passe forts), sensibilisation des utilisateurs. Notions de RGPD, conformité et protection des données personnelles.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        SECTION PROJETS
+        La section la plus importante de mon portfolio.
+        Je présente tous mes projets (stage, PPE, personnels, etc.).
+    -->
+    <section id="projets" class="projets">
+        <div class="conteneur">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2>Mes Projets</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Des projets pour apprendre en faisant</p>
+            </div>
+            <div class="grille-projets">
+
+                <!-- PROJET 1 : KBSunrise.org (STAGE) -->
+                <div class="carte-projet">
+                    <div class="image-projet">
+                        <img src="image/Kisoro Batwa Sunrise (2).png" alt="KBSunrise.org">
+                        <span class="badge-projet">En ligne</span>
+                    </div>
+                    <div class="contenu-projet">
+                        <h3>KBSunrise.org</h3>
+                        <div class="projet-details">
+                            <div class="projet-section">
+                                <h4>Contexte & Besoins</h4>
+                                <p>L'association <strong>Kisoro Batwa Sunrise</strong> avait besoin d'un site web professionnel pour promouvoir ses actions en Ouganda et faciliter la collecte de dons. Le site devait être multilingue, optimisé pour le référencement et facile à administrer.</p>
+                            </div>
+                            <div class="projet-section">
+                                <h4>Langages & Outils</h4>
+                                <div class="tech-projet">
+                                    <span>WordPress</span>
+                                    <span>Elementor</span>
+                                    <span>HTML5</span>
+                                    <span>CSS3</span>
+                                    <span>PHP 8.3</span>
+                                    <span>MySQL</span>
+                                    <span>Yoast SEO</span>
+                                    <span>TinyPNG</span>
+                                </div>
+                            </div>
+                            <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.5rem;">
+                            <a href="#stage" class="btn btn-projet" style="font-size:0.75rem; padding:0.3rem 0.8rem;"> Voir le détail
+                            </a>
+                        </div>
+                        </div>    
+                    </div>
+                </div>
+
+                <!-- PROJET 2 : Homelab (PERSONNEL) -->
+                <div class="carte-projet">
+                    <div class="image-projet">
+                        <img src="image/HpDebian.png" alt="Serveur HP Debian">
+                        <span class="badge-projet">Personnel</span>
+                    </div>
+                    <div class="contenu-projet">
+                        <h3>Homelab - Serveur Debian</h3>
+                        <div class="projet-details">
+                            <div class="projet-section">
+                                <h4>Contexte & Besoins</h4>
+                                <p>Recycler un ancien PC en serveur pour héberger mes propres services, apprendre l'administration Linux et la conteneurisation, et développer des compétences en infrastructure.</p>
+                            </div>
+                            <div class="projet-section">
+                                <h4>Langages & Outils</h4>
+                                <div class="tech-projet">
+                                    <span>Debian 12</span>
+                                    <span>Bash</span>
+                                    <span>Docker</span>
+                                    <span>SSH ED25519</span>
+                                    <span>UFW</span>
+                                    <span>Tailscale</span>
+                                </div>
+                            </div>
+                            <div class="projet-section">
+                                <h4>Travail réalisé</h4>
+                                <ul class="projet-liste">
+                                    <li>Installation et configuration de Debian 12</li>
+                                    <li>Déploiement de 10 services Docker</li>
+                                    <li>Sécurisation SSH (clés ED25519) et pare-feu UFW</li>
+                                    <li>Mise en place d'un VPN Tailscale pour l'accès externe</li>
+                                </ul>
+                                <!-- Les technologies supplémentaires en petits tags -->
+                                <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.5rem;">
+                                    <span style="background:rgba(139,26,26,0.15); padding:0.15rem 0.6rem; border-radius:4px; font-size:0.7rem; border:1px solid rgba(139,26,26,0.15);">Heimdall</span>
+                                    <span style="background:rgba(139,26,26,0.15); padding:0.15rem 0.6rem; border-radius:4px; font-size:0.7rem; border:1px solid rgba(139,26,26,0.15);">Uptime Kuma</span>
+                                    <span style="background:rgba(139,26,26,0.15); padding:0.15rem 0.6rem; border-radius:4px; font-size:0.7rem; border:1px solid rgba(139,26,26,0.15);">Portainer</span>
+                                    <span style="background:rgba(139,26,26,0.15); padding:0.15rem 0.6rem; border-radius:4px; font-size:0.7rem; border:1px solid rgba(139,26,26,0.15);">Nextcloud</span>
+                                    <span style="background:rgba(139,26,26,0.15); padding:0.15rem 0.6rem; border-radius:4px; font-size:0.7rem; border:1px solid rgba(139,26,26,0.15);">Jellyfin</span>
+                                    <span style="background:rgba(139,26,26,0.15); padding:0.15rem 0.6rem; border-radius:4px; font-size:0.7rem; border:1px solid rgba(139,26,26,0.15);">Pi-hole</span>
+                                    <span style="background:rgba(139,26,26,0.15); padding:0.15rem 0.6rem; border-radius:4px; font-size:0.7rem; border:1px solid rgba(139,26,26,0.15);">Tailscale</span>
+                                    <span style="background:rgba(139,26,26,0.15); padding:0.15rem 0.6rem; border-radius:4px; font-size:0.7rem; border:1px solid rgba(139,26,26,0.15);">Nginx Proxy</span>
+                                    <span style="background:rgba(139,26,26,0.15); padding:0.15rem 0.6rem; border-radius:4px; font-size:0.7rem; border:1px solid rgba(139,26,26,0.15);">Immich</span>
+                                    <span style="background:rgba(139,26,26,0.15); padding:0.15rem 0.6rem; border-radius:4px; font-size:0.7rem; border:1px solid rgba(139,26,26,0.15);">n8n</span>
+                                </div>
+                            </div>
+                            <div class="projet-section">
+                                <h4>Bilan</h4>
+                                <p>Ce projet m'a permis de monter en compétence en administration Linux, en sécurité réseau et en orchestration de conteneurs. J'ai appris à gérer une infrastructure complète de manière autonome.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 3 : Ô de rêves (PPE) -->
+                <div class="carte-projet">
+                    <div class="image-projet">
+                        <img src="image/O de reves.png" alt="Ô de reves">
+                        <span class="badge-projet">PPE</span>
+                    </div>
+                    <div class="contenu-projet">
+                        <h3>Ô de rêves</h3>
+                        <div class="projet-details">
+                            <div class="projet-section">
+                                <h4>Contexte & Besoins</h4>
+                                <p>Projet de création d'une boutique en ligne fictive dans le cadre du BTS SIO. L'objectif était de développer un site e-commerce complet avec gestion des utilisateurs, catalogue produits, panier et paiement sécurisé.</p>
+                            </div>
+                            <div class="projet-section">
+                                <h4>Langages & Outils</h4>
+                                <div class="tech-projet">
+                                    <span>HTML5</span>
+                                    <span>CSS3</span>
+                                    <span>JavaScript</span>
+                                    <span>PHP</span>
+                                    <span>MySQL</span>
+                                    <span>phpMyAdmin</span>
+                                </div>
+                            </div>
+                            <div class="projet-section">
+                                <h4>Travail réalisé</h4>
+                                <ul class="projet-liste">
+                                    <li>Conception de la base de données (utilisateurs, produits, commandes)</li>
+                                    <li>Développement du front-end (HTML/CSS/JS) responsive</li>
+                                    <li>Développement du back-end en PHP (connexion, inscription, panier)</li>
+                                    <li>Gestion de session et sécurisation des données</li>
+                                </ul>
+                            </div>
+                            <div class="projet-section">
+                                <h4>Bilan</h4>
+                                <p>Ce PPE m'a permis d'approfondir mes compétences en PHP, MySQL et JavaScript, ainsi que de comprendre les enjeux de sécurité d'une application web e-commerce.</p>
+                            </div>
+                        </div>
+                        <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.5rem;">
+                            <a href="https://github.com/Lyo563/O-de-reves" target="_blank" class="btn btn-projet" style="font-size:0.75rem; padding:0.3rem 0.8rem;">
+                                <i class="fab fa-github"></i> Voir le code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 4 : Logah Tubes (PERSONNEL) -->
+                <div class="carte-projet">
+                    <div class="image-projet">
+                        <img src="image/logah_tubes.svg" alt="LogahTubes">
+                        <span class="badge-projet">Personnel</span>
+                    </div>
+                    <div class="contenu-projet">
+                        <h3>Logah Tubes</h3>
+                        <div class="projet-details">
+                            <div class="projet-section">
+                                <h4>Contexte & Besoins</h4>
+                                <p>Créer un outil pratique pour télécharger l'audio des vidéos YouTube en MP3, en utilisant Python et Flask. Un projet personnel pour allier passion pour la musique et développement web.</p>
+                            </div>
+                            <div class="projet-section">
+                                <h4>Langages & Outils</h4>
+                                <div class="tech-projet">
+                                    <span>Python</span>
+                                    <span>Flask</span>
+                                    <span>yt-dlp</span>
+                                    <span>FFmpeg</span>
+                                    <span>HTML5</span>
+                                    <span>CSS3</span>
+                                    <span>JavaScript</span>
+                                    <span>Docker</span>
+                                </div>
+                            </div>
+                            <div class="projet-section">
+                                <h4>Travail réalisé</h4>
+                                <ul class="projet-liste">
+                                    <li>Développement d'une API Flask avec yt-dlp</li>
+                                    <li>Conversion audio en MP3 (192 kbps) avec FFmpeg</li>
+                                    <li>Interface utilisateur minimaliste avec HTML/CSS/JS</li>
+                                    <li>Téléchargement asynchrone avec JavaScript</li>
+                                    <li>Gestion des erreurs et nettoyage des URLs</li>
+                                </ul>
+                            </div>
+                            <div class="projet-section">
+                                <h4>Bilan</h4>
+                                <p>Ce projet m'a permis de découvrir Python et Flask, de comprendre le fonctionnement des APIs et de maîtriser l'intégration de bibliothèques externes. Une belle expérience de développement full-stack.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJET 5 : Apple Music (Java IHM) -->
+                <div class="carte-projet">
+                    <div class="image-projet">
+                        <img src="image/music_app_cover_2d_music_.svg" alt="2D Music">
+                        <span class="badge-projet">App</span>
+                    </div>
+                    <div class="contenu-projet">
+                        <h3>Apple Music - Gestion de playlist</h3>
+                        <div class="projet-details">
+                            <div class="projet-section">
+                                <h4>Contexte & Besoins</h4>
+                                <p>Application Java avec IHM Swing développée dans le cadre du BTS SIO. L'objectif était de créer un gestionnaire de playlist musicale avec authentification, CRUD complet (Consultation, Ajout, Modification, Suppression, Recherche) et une architecture "une seule JFrame".</p>
+                            </div>
+                            <div class="projet-section">
+                                <h4>Langages & Outils</h4>
+                                <div class="tech-projet">
+                                    <span>Java 8+</span>
+                                    <span>Swing</span>
+                                    <span>IHM</span>
+                                </div>
+                            </div>
+                            <div class="projet-section">
+                                <h4>Travail réalisé</h4>
+                                <ul class="projet-liste">
+                                    <li>Connexion sécurisée</li>
+                                    <li>Consultation des musiques dans une JTable</li>
+                                    <li>Ajout d'une chanson (titre, artiste, durée)</li>
+                                    <li>Modification d'une chanson sélectionnée</li>
+                                    <li>Suppression par saisie du titre</li>
+                                    <li>Recherche insensible à la casse</li>
+                                    <li>Héritage avec la classe Podcast (extends Chanson)</li>
+                                    <li>Collection ArrayList pour stocker les musiques</li>
+                                </ul>
+                            </div>
+                            <div class="projet-section">
+                                <h4>Bilan</h4>
+                                <p>Ce projet m'a permis de maîtriser la création d'interfaces graphiques en Java Swing, la programmation orientée objet (héritage, collections, encapsulation) et l'architecture à une seule JFrame avec changement de panels.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        SECTION STAGES
+        Je présente tous mes stages sous forme de chronologie.
+    -->
+    <section id="stages" class="stages">
+        <div class="conteneur">
+            <div class="section-header">
+                <span class="section-number">07</span>
+                <h2>Mes Stages</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="chronologie">
+                <!-- Stage 2ème année (à venir) -->
+                <div class="element-chronologie">
+                    <div class="contenu-chronologie">
+                        <div class="chrono-badge">2027</div>
+                        <h3>Stage de 2ème année</h3>
+                        <p><strong>Entreprise :</strong> À définir</p>
+                        <p><strong>Période :</strong> À venir</p>
+                        <p><strong>Missions :</strong> À  venir</p>
+                    </div>
+                </div>
+
+                <!-- Stage 1ère année KBSunrise -->
+                <div class="element-chronologie">
+                    <div class="contenu-chronologie">
+                        <div class="chrono-badge">2026</div>
+                        <h3>Stage de 1ère année</h3>
+                        <p><strong>Entreprise :</strong> Kisoro Batwa Sunrise Association</p>
+                        <p><strong>Période :</strong> 18 Mai 2026 au 27 Juin 2026</p>
+                        <p><strong>Missions :</strong> Création complète d'un site WordPress pour l'association. Analyse des besoins, développement, intégration des médias, optimisation SEO, sécurité et mise en production.</p>
+                        <a href="#stage" class="btn btn-projet">Voir le détail</a>
+                    </div>
+                </div>
+
+                <!-- Stage CGI -->
+                 <div class="element-chronologie">
+                    <div class="contenu-chronologie">
+                        <div class="chrono-badge">2022</div>
+                        <h3>Stage d'observation - CGI</h3>
+                        <p><strong>Entreprise :</strong> CGI</p>
+                        <p><strong>Période :</strong> Juin 2022 à Juillet 2022</p>
+                        <p><strong>Missions :</strong> Découverte du métier de développeur d'applications. Observation du travail en équipe pour créer, tester et améliorer des logiciels selon les besoins des clients. Assistance à des réunions de projet, découverte de Java, pour le suivi des modifications du code.</p>
+                        <p style="font-size:0.9rem; color:var(--texte-muted); margin-top:0.5rem; font-style:italic;">
+                            <i class="fas fa-lightbulb" style="color:var(--accent-clair); margin-right:0.3rem;"></i>
+                            Ce stage m'a permis de mieux comprendre le cycle de vie d'une application, de l'idée de départ jusqu'à sa mise en ligne.
+                        </p>
+                        <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-top:0.5rem;">
+                            <span style="background:rgba(139,26,26,0.12); padding:0.15rem 0.6rem; border-radius:4px; font-size:0.7rem; border:1px solid rgba(139,26,26,0.12);">Java</span>
+                            <span style="background:rgba(139,26,26,0.12); padding:0.15rem 0.6rem; border-radius:4px; font-size:0.7rem; border:1px solid rgba(139,26,26,0.12);">Travail en équipe</span>
+                            <span style="background:rgba(139,26,26,0.12); padding:0.15rem 0.6rem; border-radius:4px; font-size:0.7rem; border:1px solid rgba(139,26,26,0.12);">Cycle de vie logiciel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stage Gendarmerie -->
+                <div class="element-chronologie">
+                    <div class="contenu-chronologie">
+                        <div class="chrono-badge">2021</div>
+                        <h3>Stage d'observation - Gendarmerie Nationale</h3>
+                        <p><strong>Entreprise :</strong> Gendarmerie Nationale</p>
+                        <p><strong>Période :</strong> Novembre 2021 à Décembre 2021</p>
+                        <p><strong>Missions :</strong> Découverte du fonctionnement d'une brigade, missions de sécurité, prévention et assistance à la population.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        SECTION STAGE KBSUNRISE (détail)
+        Une page dédiée pour détailler mon stage à KBSunrise.
+        C'est la section vers laquelle pointent les liens "#stage".
+    -->
+    <section id="stage" class="stage-detail">
+        <div class="conteneur">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2>Stage KBSunrise.org</h2>
+                <div class="section-line"></div>
+            </div>
+            <!-- En-tête avec logo et infos générales du stage -->
+            <div class="stage-header">
+                <div class="stage-info">
+                    <div class="stage-logo">
+                        <img src="image/Kisoro Batwa Sunrise (2).png" alt="KBSunrise Logo">
+                    </div>
+                    <div class="stage-meta">
+                        <h3>Kisoro Batwa Sunrise Association</h3>
+                        <p><i class="fas fa-calendar-alt"></i> 18/05/2026 - 27/06/2026</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Télétravail</p>
+                        <p><i class="fas fa-tag"></i> Stage de 1ère année BTS SIO</p>
+                        <a href="https://kbsunrise.org" target="_blank" class="btn btn-principal">Voir le site en ligne</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Description générale du stage -->
+            <div class="stage-description">
+                <p>Création d'un site web pour l'association <strong>Kisoro Batwa Sunrise</strong>, permettant de promouvoir leurs actions en Ouganda et de faciliter la collecte de dons. Le site devait être professionnel, multilingue et optimisé pour le référencement naturel.</p>
+            </div>
+
+            <!-- Je détaille les différentes catégories de travail réalisé -->
+            <div class="stage-categories">
+                <!-- Analyse & Conception -->
+                <div class="stage-categorie">
+                    <h4><i class="fas fa-search"></i> Analyse & Conception</h4>
+                    <ul>
+                        <li>Analyse des besoins du client</li>
+                        <li>Définition de l'architecture du site (5 pages)</li>
+                        <li>Création de maquettes visuelles</li>
+                        <li>Définition de la charte graphique</li>
+                        <li>Rédaction de tous les textes du site</li>
+                    </ul>
+                </div>
+
+                <!-- Développement -->
+                <div class="stage-categorie">
+                    <h4><i class="fas fa-code"></i> Développement</h4>
+                    <ul>
+                        <li>Création du header avec logo et navigation</li>
+                        <li>Développement de 5 pages avec Elementor</li>
+                        <li>Correction de bugs CSS</li>
+                        <li>Optimisation du responsive mobile</li>
+                        <li>Création d'une timeline historique</li>
+                    </ul>
+                </div>
+
+                <!-- Plugins -->
+                <div class="stage-categorie">
+                    <h4><i class="fas fa-plug"></i> Plugins & Intégrations</h4>
+                    <ul>
+                        <li>Elementor (Page Builder)</li>
+                        <li>Forminator (Formulaire de contact)</li>
+                        <li>Yoast SEO (Optimisation)</li>
+                        <li>TinyPNG (Compression images)</li>
+                        <li>GT Translate(Multilingue)</li>
+                        <li>Akismet anti-spam</li>
+                    </ul>
+                </div>
+
+                <!-- Sécurité -->
+                <div class="stage-categorie">
+                    <h4><i class="fas fa-shield-alt"></i> Sécurité & RGPD</h4>
+                    <ul>
+                        <li>Activation d'Akismet anti-spam</li>
+                        <li>Rédaction de la politique de confidentialité</li>
+                        <li>Création des mentions légales</li>
+                        <li>Vérification du certificat SSL</li>
+                    </ul>
+                </div>
+
+                <!-- Hébergement -->
+                <div class="stage-categorie">
+                    <h4><i class="fas fa-cloud-upload-alt"></i> Hébergement & Déploiement</h4>
+                    <ul>
+                        <li>Achat hébergement OVH Pro</li>
+                        <li>Installation de WordPress sur OVH</li>
+                        <li>Création de la base de données MySQL</li>
+                        <li>Migration avec WPvivid Backup</li>
+                    </ul>
+                </div>
+
+                <!-- Médias -->
+                <div class="stage-categorie">
+                    <h4><i class="fas fa-image"></i> Médias & Images</h4>
+                    <ul>
+                        <li>Sélection et tri de 176 photos</li>
+                        <li>Compression via TinyPNG API</li>
+                        <li>Upload dans la médiathèque</li>
+                        <li>Textes alternatifs optimisés</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Les technologies que j'ai utilisées durant ce stage -->
+            <div class="stage-tech">
+                <h3>Technologies utilisées</h3>
+                <div class="tech-tags">
+                    <span>WordPress</span>
+                    <span>Elementor</span>
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>PHP 8.3</span>
+                    <span>MySQL</span>
+                    <span>OVH Pro</span>
+                    <span>Yoast SEO</span>
+                    <span>TinyPNG</span>
+                    <span>Let's Encrypt</span>
+                </div>
+            </div>
+
+            <!-- Les chiffres clés de ce stage -->
+            <div class="stage-chiffres">
+                <h3>Chiffres clés</h3>
+                <div class="chiffres-grid">
+                    <div class="chiffre-item">
+                        <span class="chiffre-nombre">176</span>
+                        <span class="chiffre-label">Photos traitées</span>
+                    </div>
+                    <div class="chiffre-item">
+                        <span class="chiffre-nombre">5</span>
+                        <span class="chiffre-label">Pages créées</span>
+                    </div>
+                    <div class="chiffre-item">
+                        <span class="chiffre-nombre">12+</span>
+                        <span class="chiffre-label">Plugins installés</span>
+                    </div>
+                    <div class="chiffre-item">
+                        <span class="chiffre-nombre">6</span>
+                        <span class="chiffre-label">Semaines de stage</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        SECTION CERTIFICATIONS
+        Je liste toutes mes certifications avec des liens vers les PDF.
+    -->
+    <section id="certifications" class="certifications">
+        <div class="conteneur">
+            <div class="section-header">
+                <span class="section-number">08</span>
+                <h2>Mes Certifications</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">9 certifications obtenues pour valider mes compétences</p>
+            </div>
+            <div class="grille-certifications">
+                <!-- Certification CNIL -->
+                <div class="carte-certification">
+                    <div class="cert-icone"><i class="fas fa-lock"></i></div>
+                    <h3>CNIL</h3>
+                    <p>Atelier RGPD</p>
+                    <div class="date-certification">Septembre 2025</div>
+                    <a href="image/Certificat_Module5.pdf" class="btn btn-cv"><i class="fas fa-file-pdf"></i> Voir</a>
+                </div>
+
+                <!-- Certification ANSSI -->
+                <div class="carte-certification">
+                    <div class="cert-icone"><i class="fas fa-shield-alt"></i></div>
+                    <h3>ANSSI</h3>
+                    <p>SecNum Académie</p>
+                    <div class="date-certification">Novembre 2025</div>
+                    <a href="image/Certifiaction_SecNum.pdf" class="btn btn-cv"><i class="fas fa-file-pdf"></i> Voir</a>
+                </div>
+
+                <!-- Cisco Cybersecurity -->
+                <div class="carte-certification">
+                    <div class="cert-icone"><i class="fas fa-network-wired"></i></div>
+                    <h3>Cisco Networking</h3>
+                    <p>Cybersécurité</p>
+                    <div class="date-certification">Décembre 2025</div>
+                    <a href="image/IntroductionOfCybersecurity.pdf" class="btn btn-cv"><i class="fas fa-file-pdf"></i> Voir</a>
+                </div>
+
+                <!-- Cisco Matériel -->
+                <div class="carte-certification">
+                    <div class="cert-icone"><i class="fas fa-network-wired"></i></div>
+                    <h3>Cisco Networking</h3>
+                    <p>Matériel informatique</p>
+                    <div class="date-certification">Décembre 2025</div>
+                    <a href="image/Les_bases_du_matériel_informatique.pdf" class="btn btn-cv"><i class="fas fa-file-pdf"></i> Voir</a>
+                </div>
+
+                <!-- Google AI -->
+                <div class="carte-certification">
+                    <div class="cert-icone"><i class="fab fa-google"></i></div>
+                    <h3>Google Coursera</h3>
+                    <p>Introduction to AI</p>
+                    <div class="date-certification">Mai 2026</div>
+                    <a href="image/IntroductionToAI.pdf" class="btn btn-cv"><i class="fas fa-file-pdf"></i> Voir</a>
+                </div>
+
+                <!-- Google Prompting -->
+                <div class="carte-certification">
+                    <div class="cert-icone"><i class="fab fa-google"></i></div>
+                    <h3>Google Coursera</h3>
+                    <p>Art of Prompting</p>
+                    <div class="date-certification">Juin 2026</div>
+                    <a href="image/Discover%20the%20Art%20of%20Prompting.pdf" class="btn btn-cv"><i class="fas fa-file-pdf"></i> Voir</a>
+                </div>
+
+                <!-- Google Productivity -->
+                <div class="carte-certification">
+                    <div class="cert-icone"><i class="fab fa-google"></i></div>
+                    <h3>Google Coursera</h3>
+                    <p>Productivity With AI</p>
+                    <div class="date-certification">Juin 2026</div>
+                    <a href="image/Maximize%20Productivity%20With%20AI%20Tools.pdf" class="btn btn-cv"><i class="fas fa-file-pdf"></i> Voir</a>
+                </div>
+
+                <!-- Sololearn Java -->
+                <div class="carte-certification">
+                    <div class="cert-icone"><i class="fab fa-java"></i></div>
+                    <h3>Sololearn</h3>
+                    <p>Introduction à Java</p>
+                    <div class="date-certification">Mars 2026</div>
+                    <a href="image/JAVA.pdf" class="btn btn-cv"><i class="fas fa-file-pdf"></i> Voir</a>
+                </div>
+
+                <!-- Sololearn Python -->
+                <div class="carte-certification">
+                    <div class="cert-icone"><i class="fab fa-python"></i></div>
+                    <h3>Sololearn</h3>
+                    <p>Introduction à Python</p>
+                    <div class="date-certification">Juillet 2026</div>
+                    <a href="image/Python.pdf" class="btn btn-cv"><i class="fas fa-file-pdf"></i> Voir</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        SECTION PROJET PROFESSIONNEL
+        Je présente mes objectifs de carrière, ma formation visée et ma vision.
+    -->
+    <section id="projetpro" class="projetpro">
+        <div class="conteneur">
+            <div class="section-header">
+                <span class="section-number">10</span>
+                <h2>Mon Projet Professionnel</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contenu-projetpro">
+                <!-- Introduction -->
+                <div class="projetpro-intro">
+                    <p>Passionnée par le développement web et l'infrastructure, je souhaite construire un parcours alliant <strong>technique, innovation et entrepreneuriat</strong>.</p>
+                </div>
+
+                <!-- Grille des objectifs -->
+                <div class="grille-projetpro">
+                    <div class="carte-projetpro">
+                        <div class="icone-projetpro"><i class="fas fa-code"></i></div>
+                        <h3>Métier visé</h3>
+                        <p><strong>Développeuse Web & DevOps</strong></p>
+                        <p>Allier le développement d'applications web avec la gestion d'infrastructure et l'automatisation des déploiements.</p>
+                    </div>
+
+                    <div class="carte-projetpro">
+                        <div class="icone-projetpro"><i class="fas fa-graduation-cap"></i></div>
+                        <h3>Formation</h3>
+                        <p><strong>Bac+5 visé</strong></p>
+                        <p>Poursuite d'études en Master ou école d'ingénieurs en informatique, avec une spécialisation en DevOps ou Cloud Computing.</p>
+                    </div>
+
+                    <div class="carte-projetpro">
+                        <div class="icone-projetpro"><i class="fas fa-rocket"></i></div>
+                        <h3>Objectif</h3>
+                        <p><strong>Entrepreneuriat</strong></p>
+                        <p>Créer ma propre entreprise de services informatiques, en proposant des solutions web sur mesure et des prestations d'infrastructure.</p>
+                    </div>
+
+                    <div class="carte-projetpro">
+                        <div class="icone-projetpro"><i class="fas fa-server"></i></div>
+                        <h3>Spécialités</h3>
+                        <p><strong>Dev Web & DevOps</strong></p>
+                        <p>Développement d'applications web (front-end/back-end) et gestion d'infrastructure (homelab, Docker, Kubernetes, CI/CD).</p>
+                    </div>
+                </div>
+
+                <!-- Ma vision à long terme -->
+                <div class="projetpro-vision">
+                    <h3>Ma vision</h3>
+                    <p>Je souhaite allier ma passion pour le code et l'infrastructure pour accompagner les entreprises dans leur transformation numérique. Mon objectif est de devenir une experte capable de gérer l'ensemble du cycle de vie d'un projet, du développement à l'exploitation en passant par le déploiement et la maintenance.</p>
+                    <div class="vision-tags">
+                        <span>Innovation</span>
+                        <span>Créativité</span>
+                        <span>Technique</span>
+                        <span>Impact social</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        SECTION CONTACT
+        Je propose un formulaire de contact pour que les visiteurs puissent m'écrire.
+        Les informations de contact (email, localisation, réseaux sociaux) sont aussi affichées.
+    -->
+    <section id="contact" class="contact">
+        <div class="conteneur">
+            <div class="section-header">
+                <span class="section-number">12</span>
+                <h2>Contactez-moi</h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">Un projet, un stage ou simplement envie d'échanger ?</p>
+            </div>
+            <div class="contact-wrapper">
+                <!-- Informations de contact -->
+                <div class="contact-info">
+                    <h3>Parlons de votre projet</h3>
+                    <p>Je suis ouverte aux opportunités et aux collaborations. Écrivez-moi, je vous répondrai avec plaisir.</p>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <span>lucreziaogah@gmail.com</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <span>lucreziaogah.pro@gmail.com</span>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Seine et Marne, France</span>
+                            <span>Isère, France</span>
+                        </div>
+                    </div>
+                    <div class="contact-social">
+                        <a href="https://www.instagram.com/lyo.dev_/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/lucrezia-ogah-a3b02b330/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Lyo563" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 
+        FOOTER (Pied de page)
+        Je reprends le logo, les liens de navigation et les réseaux sociaux.
+        Un lien pour remonter en haut de la page est aussi présent.
+    -->
+    <footer>
+        <div class="conteneur">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="image/Lyo.png" alt="Logo LYO">
+                    <span>Lucrezia Ogah</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#accueil">Accueil</a>
+                    <a href="#apropos">À propos</a>
+                    <a href="#competences">Compétences</a>
+                    <a href="#projets">Projets</a>
+                    <a href="#veille">Veille</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/lyo05_/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/lucrezia-ogah-a3b02b330/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Lyo563" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lucrezia Ogah - Tous droits réservés.</p>
+                <a href="#accueil" class="retour-haut"><i class="fas fa-chevron-up"></i> Retour en haut</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 
+        SCRIPTS JAVASCRIPT
+        Je gère :
+        - Le menu actif au scroll (la page sait dans quelle section on se trouve)
+        - Le menu burger (pour les mobiles)
+        - Le thème clair/sombre (avec sauvegarde dans le localStorage)
+    -->
+    <script>
+        // MENU ACTIF AU SCROLL
+        // Je récupère toutes les sections et tous les liens de navigation
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.liens-nav a');
+
+        // Quand je scroll, je regarde quelle section est visible et je mets le lien correspondant en surbrillance
+        window.addEventListener('scroll', function() {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 130;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('actif');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('actif');
+                }
+            });
+
+            // Je change aussi l'apparence du header quand je descends (effet glass)
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // BURGER MENU (pour mobiles)
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.liens-nav');
+
+        // Quand on clique sur le burger, j'ouvre/ferme le menu
+        burger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Quand on clique sur un lien du menu, je ferme le menu automatiquement
+        document.querySelectorAll('.liens-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                burger.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+
+        // THEME CLAIR / SOMBRE
+        const themeToggle = document.getElementById('theme-toggle');
+        const icon = themeToggle.querySelector('i');
+
+        // Je vérifie si un thème est sauvegardé dans le navigateur
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('theme-clair');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        // Quand je clique sur le bouton, je bascule entre clair et sombre
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('theme-clair');
+            
+            if (document.body.classList.contains('theme-clair')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>
