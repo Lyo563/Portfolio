@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veille Techno - Lucrezia Ogah</title>
+    <link rel="icon" href="image/Lyo.png">
+    <!-- J'importe Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- J'importe la police Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /*  CSS DE LA PAGE VEILLE (en harmonie avec le portfolio) */
+        /* 1. VARIABLES */
+        :root {
+            --noir: #1a1a1a;
+            --blanc: #ffffff;
+            --gris-clair: #f5f5f5;
+            --gris: #8a8a8a;
+            --gris-fonce: #3d3d3d;
+            --accent: #8b1a1a;
+            --accent-clair: #b33a3a;
+            --police: 'Inter', 'Helvetica Neue', sans-serif;
+        }
+
+        /* 2. RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--police);
+            background: var(--blanc);
+            color: var(--noir);
+            line-height: 1.6;
+            padding-top: 70px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        a:hover {
+            color: var(--accent);
+        }
+
+        .conteneur {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* 3. NAVIGATION (identique à ton header principal) */
+        .navigation-veille {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee;
+            padding: 0.75rem 0;
+        }
+
+        .navigation-veille .conteneur {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+        }
+
+        .menu {
+            display: flex;
+            list-style: none;
+            gap: 0.25rem;
+            flex-wrap: wrap;
+        }
+
+        .menu a {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--gris);
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .menu a:hover {
+            color: var(--noir);
+            background: #f0f0f0;
+        }
+
+        /* 4. EN-TÊTE DE LA PAGE */
+        .en-tete-veille {
+            text-align: center;
+            padding: 3rem 0 2rem;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 2rem;
+        }
+
+        .en-tete-veille h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--noir);
+        }
+
+        .en-tete-veille p {
+            font-size: 1.1rem;
+            color: var(--gris-fonce);
+            margin-top: 0.5rem;
+        }
+
+        /* 5. SECTIONS DE VEILLE */
+        .sujet-veille {
+            background: var(--blanc);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #eee;
+            transition: all 0.2s ease;
+        }
+
+        .sujet-veille:hover {
+            border-color: var(--accent);
+        }
+
+        .sujet-veille h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        /* 6. BLOCS D'EXPLICATION (articles) */
+        .bloc-explication {
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bloc-explication h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--noir);
+        }
+
+        .bloc-explication p {
+            color: var(--gris-fonce);
+            font-size: 0.95rem;
+            margin: 0.5rem 0;
+        }
+
+        .bloc-explication ul {
+            list-style: none;
+            padding-left: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .bloc-explication ul li {
+            padding: 0.2rem 0;
+            font-size: 0.9rem;
+            color: var(--gris-fonce);
+            position: relative;
+        }
+
+        .bloc-explication ul li::before {
+            content: '▸';
+            position: absolute;
+            left: -1.2rem;
+            color: var(--accent);
+        }
+
+        .reference-source {
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid #eee;
+        }
+
+        .reference-source a {
+            color: var(--accent);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .reference-source a:hover {
+            text-decoration: underline;
+        }
+
+        /* 7. PROBLÉMATIQUE */
+        .points-cles {
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+        }
+
+        .points-cles p {
+            font-size: 1.05rem;
+            color: var(--gris-fonce);
+        }
+
+        .points-cles p strong {
+            color: var(--noir);
+        }
+
+        .points-cles h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .points-cles ul {
+            list-style: none;
+            padding-left: 1.2rem;
+        }
+
+        .points-cles ul li {
+            padding: 0.2rem 0;
+            font-size: 0.9rem;
+            color: var(--gris-fonce);
+            position: relative;
+        }
+
+        .points-cles ul li::before {
+            content: '•';
+            position: absolute;
+            left: -1.2rem;
+            color: var(--accent);
+        }
+
+        /* 8. GRILLE COMPARAISON (acteurs) */
+        .grille-comparaison {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .avantages-inconvenients {
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid #eee;
+            transition: all 0.2s ease;
+        }
+
+        .avantages-inconvenients:hover {
+            border-color: var(--accent);
+        }
+
+        .avantages-inconvenients h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .avantages-inconvenients img {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .liste-avantages,
+        .liste-inconvenients {
+            list-style: none;
+            padding-left: 1.2rem;
+        }
+
+        .liste-avantages li,
+        .liste-inconvenients li {
+            padding: 0.2rem 0;
+            font-size: 0.85rem;
+            color: var(--gris-fonce);
+            position: relative;
+        }
+
+        .liste-avantages li::before {
+            position: absolute;
+            left: -1.5rem;
+            font-size: 0.8rem;
+        }
+
+        .liste-inconvenients li::before {
+            position: absolute;
+            left: -1.5rem;
+            font-size: 0.8rem;
+        }
+
+        /* 9. IMPACTS (enjeux organisations) */
+        .impact-emploi {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .categorie-impact {
+            background: #f8f8f8;
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            border: 1px solid #eee;
+        }
+
+        .categorie-impact h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .categorie-impact ul {
+            list-style: none;
+            padding-left: 1.2rem;
+        }
+
+        .categorie-impact ul li {
+            padding: 0.15rem 0;
+            font-size: 0.85rem;
+            color: var(--gris-fonce);
+            position: relative;
+        }
+
+        .categorie-impact ul li::before {
+            content: '▸';
+            position: absolute;
+            left: -1.2rem;
+            color: var(--accent);
+        }
+
+        /* 10. RESPONSIVE */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 1rem;
+                right: 1rem;
+                background: var(--blanc);
+                border: 1px solid #eee;
+                border-radius: 8px;
+                padding: 1rem;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu a {
+                padding: 0.6rem 1rem;
+                text-align: center;
+            }
+
+            /* Menu burger (ajout rapide pour mobile) */
+            .burger-veille {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+                cursor: pointer;
+                padding: 4px;
+            }
+
+            .burger-veille span {
+                display: block;
+                width: 24px;
+                height: 2px;
+                background: var(--noir);
+                transition: all 0.2s ease;
+            }
+
+            .burger-veille.active span:nth-child(1) {
+                transform: rotate(45deg) translate(4px, 4px);
+            }
+            .burger-veille.active span:nth-child(2) {
+                opacity: 0;
+            }
+            .burger-veille.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(4px, -4px);
+            }
+
+            .grille-comparaison,
+            .impact-emploi {
+                grid-template-columns: 1fr;
+            }
+
+            .sujet-veille {
+                padding: 1rem;
+            }
+
+            .bloc-explication {
+                padding: 1rem;
+            }
+
+            .en-tete-veille h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .burger-veille {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MENU DE NAVIGATION -->
+    <nav class="navigation-veille">
+        <div class="conteneur">
+            <div class="logo">
+                <img src="image/Lyo.png" alt="Logo Lucrezia">
+            </div>
+            <ul class="menu" id="menuVeille">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#actualites">Actualités</a></li>
+                <li><a href="#problematique">Problématique</a></li>
+                <li><a href="#fonctionnement">Fonctionnement</a></li>
+                <li><a href="#acteurs">Acteurs</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+                <li><a href="index.html" style="color:var(--accent); font-weight:600;">← Portfolio</a></li>
+            </ul>
+            <div class="burger-veille" id="burgerVeille">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECTION PRINCIPALE -->
+    <section id="veille_technologique">
+        <div class="conteneur">
+
+            <!-- EN-TETE -->
+            <div id="accueil" class="en-tete-veille">
+                <h2>Veille Technologique</h2>
+                <p>Les oreillettes de traduction instantanée : vers la fin de la barrière linguistique ?</p>
+            </div>
+
+            <!-- ACTUALITÉS -->
+            <div id="actualites" class="sujet-veille">
+                <h3>Flash Actu — Août 2026</h3>
+
+                <!-- Article 1 - Zazoom (10/08/2026) -->
+                <div class="bloc-explication">
+                    <h4>1. Traduttori simultanei : smartphone, auricolari e occhiali smart</h4>
+                    <p><strong>Source : Zazoom.it</strong> | <strong>Date :</strong> 10 Août 2026</p>
+                    <p>En 2026, les traducteurs simultanés sont sortis des simples applications pour s'intégrer dans des dispositifs portables du quotidien. Les écouteurs traduisent pendant que vous parlez, les lunettes intelligentes affichent la traduction en temps réel, et les smartphones interprètent les appels téléphoniques.</p>
+                    <ul>
+                        <li>La traduction ne nécessite plus de taper ou de montrer l'écran : elle se fait en temps réel.</li>
+                        <li>Les appareils récents intègrent déjà des fonctionnalités de traduction vocale sans que l'utilisateur le sache.</li>
+                        <li>L'article propose une sélection des 7 meilleurs écouteurs avec traduction simultanée pour 2026.</li>
+                    </ul>
+                    <div class="reference-source">
+                        <a href="https://www.zazoom.it/2026-08-10/traduttori-simultanei-smartphone-auricolari-e-occhiali-smart-promettono-conversazioni-in-tutte-le-lingue-utilissimi-in-viaggio-ecco-quale-scegliere/19553431/" target="_blank">Lire sur Zazoom →</a>
+                    </div>
+                </div>
+
+                <!-- Article 2 - Ouest-France -->
+                <div class="bloc-explication">
+                    <h4>2. Tous polyglottes ! C'est déjà possible avec l'IA et une paire d'écouteurs</h4>
+                    <p><strong>Source : Ouest-France (Partir)</strong> | <strong>Date :</strong> Août 2026</p>
+                    <p>La barrière de la langue n'est plus un obstacle pour les voyageurs grâce à l'association de l'IA et des écouteurs Bluetooth. Cette technologie transforme des écouteurs ordinaires en véritables outils d'interprétation en temps réel.</p>
+                    <ul>
+                        <li>Le micro des écouteurs isole les voix et supprime les bruits ambiants.</li>
+                        <li>L'IA transforme les paroles en texte, les traduit en analysant le contexte et le ton, puis génère un retour audio dans l'oreille de l'utilisateur.</li>
+                        <li>La latence est désormais réduite à 1 ou 2 secondes (contre 5 à 10 auparavant), rendant les conversations plus fluides et naturelles.</li>
+                        <li>La traduction est devenue « intelligente » : elle reproduit les émotions et l'intonation, avec des voix de synthèse réalistes.</li>
+                    </ul>
+                    <div class="reference-source">
+                        <a href="https://partir.ouest-france.fr/magazine/tous-polyglottes-cest-deja-possible-avec-lia-et-une-paire-decouteurs/" target="_blank">Lire sur Ouest-France →</a>
+                    </div>
+                </div>
+
+                <!-- Article 3 - Soundcore -->
+                <div class="bloc-explication">
+                    <h4>3. Écouteurs traduction instantanée : Le futur de la communication sans frontières</h4>
+                    <p><strong>Source : Soundcore Blog</strong> | <strong>Date :</strong> 25 Mai 2026</p>
+                    <p>Les écouteurs traduction instantanée transforment radicalement la manière dont nous interagissons avec le monde, que ce soit pour le travail, les études ou les voyages internationaux. Ils agissent comme des interprètes personnels nichés au creux des oreilles.</p>
+                    <ul>
+                        <li>Le fonctionnement repose sur une synergie entre le matériel (microphones haute fidélité) et le cloud (algorithmes d'IA puissants).</li>
+                        <li>La latence est l'ennemi numéro un : un bon système doit offrir une réponse quasi immédiate.</li>
+                        <li>Les critères de choix incluent : la vitesse de traitement, la précision sémantique et la capacité des microphones à isoler la voix dans le bruit.</li>
+                    </ul>
+                    <div class="reference-source">
+                        <a href="https://www.soundcore.com/fr/blogs/earbuds/instant-translation-earbuds" target="_blank">Lire sur Soundcore →</a>
+                    </div>
+                </div>
+
+                <!-- Vidéo YouTube -->
+                <div class="bloc-explication">
+                    <h4>4. Top 5 BEST Translation Earbuds in 2026</h4>
+                    <p><strong>Source : YouTube (Top 5 Picks Channel)</strong> | <strong>Date :</strong> 16 Août 2026</p>
+                    <p>Cette vidéo teste cinq des écouteurs à traduction en temps réel les plus intéressants de 2026, dans des situations réelles : restaurants, taxis, réunions professionnelles et conversations multilingues.</p>
+                    <ul>
+                        <li><strong> SonaBuds</strong> — Option économique</li>
+                        <li><strong>soundcore AeroFit 2 AI Assistant</strong> — Bon rapport qualité-prix</li>
+                        <li><strong>soundcore Liberty 5 Pro Max</strong> — Performant</li>
+                        <li><strong>Timekettle W4</strong> — Très performant</li>
+                        <li><strong>Timekettle W4 Pro</strong> — Le meilleur selon le testeur</li>
+                    </ul>
+                    <div class="reference-source">
+                        <a href="https://www.youtube.com/watch?v=rtAZ2vr7yak" target="_blank">Regarder la vidéo →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROBLÉMATIQUE -->
+            <div id="problematique" class="sujet-veille">
+                <h3>Problématique</h3>
+                <div class="points-cles">
+                    <p><strong>Les oreillettes de traduction instantanée peuvent-elles réellement remplacer l'apprentissage des langues et devenir un outil fiable dans la communication mondiale ?</strong></p>
+                    <p style="margin-top:0.5rem;">Cette question guide toute ma recherche.</p>
+                </div>
+            </div>
+
+            <!-- FONCTIONNEMENT -->
+            <div id="fonctionnement" class="sujet-veille">
+                <h3>Comment ça marche ?</h3>
+                <div class="bloc-explication">
+                    <h4>Le pipeline de la traduction instantanée</h4>
+                    <p>C'est un processus en 4 étapes clés qui doit être quasi-instantané :</p>
+                    <ul>
+                        <li><strong>1. Capture et Reconnaissance (ASR) :</strong> Le micro capte la voix, l'IA la transforme en texte (Speech-to-Text). Les nouveaux modèles gèrent le bruit et les accents.</li>
+                        <li><strong>2. Traduction Neuronale (NMT) :</strong> Le texte est traduit par un modèle d'IA (comme Gemini). C'est là que le contexte et l'argot sont analysés pour une traduction fidèle.</li>
+                        <li><strong>3. Synthèse Vocale (TTS) :</strong> Le texte traduit est transformé en audio, en imitant le ton et la cadence de la voix originale.</li>
+                        <li><strong>4. Infrastructure :</strong> Tout ce calcul est soit fait sur le smartphone, soit dans le cloud (pour les modèles les plus puissants).</li>
+                    </ul>
+                    <p><em>Synthèse personnelle à partir des articles de Soundcore, Ouest-France et Frandroid.</em></p>
+                </div>
+            </div>
+
+            <!-- ACTEURS -->
+            <div id="acteurs" class="sujet-veille">
+                <h3>Les Acteurs du Marché (2026)</h3>
+                <div class="grille-comparaison">
+                    <div class="avantages-inconvenients">
+                        <img src="image/Google.png" alt="Google" width="40px">
+                        <h4>Google</h4>
+                        <ul class="liste-avantages">
+                            <li><strong>Produit :</strong> Google Traduction + Gemini</li>
+                            <li>Compatible avec <strong>tous</strong> les écouteurs</li>
+                            <li>IA Gemini pour le contexte</li>
+                        </ul>
+                    </div>
+                    <div class="avantages-inconvenients">
+                        <img src="image/Apple.png" alt="Apple" width="40px">
+                        <h4>Apple</h4>
+                        <ul class="liste-avantages">
+                            <li><strong>Produit :</strong> AirPods + Apple Intelligence</li>
+                            <li>Traitement local (confidentialité)</li>
+                            <li>Prévu fin 2025 avec iOS 19</li>
+                        </ul>
+                    </div>
+                    <div class="avantages-inconvenients">
+                        <img src="image/Timekettle.png" alt="Timekettle" width="40px">
+                        <h4>Timekettle</h4>
+                        <ul class="liste-avantages">
+                            <li><strong>Produit :</strong> W4 Pro, WT2 Edge</li>
+                            <li>Spécialiste de la traduction</li>
+                            <li>Classé n°1 en 2026</li>
+                        </ul>
+                    </div>
+                    <div class="avantages-inconvenients">
+                        <img src="image/WaverlyLabs.png" alt="Waverly Labs" width="40px">
+                        <h4>Waverly Labs</h4>
+                        <ul class="liste-avantages">
+                            <li><strong>Produit :</strong> Ambassador</li>
+                            <li>Haut de gamme professionnel</li>
+                            <li>Idéal pour les réunions</li>
+                        </ul>
+                    </div>
+                    <div class="avantages-inconvenients">
+                        <img src="image/soundcore.png" alt="soundcore" width="40px">
+                        <h4>soundcore</h4>
+                        <ul class="liste-avantages">
+                            <li><strong>Produit :</strong> AeroFit 2, Liberty 5</li>
+                            <li>Bon rapport qualité-prix</li>
+                            <li>Assistant IA intégré</li>
+                        </ul>
+                    </div>
+                </div>
+                <p><em>Sources : Sites officiels, comparatifs web et vidéo test 2026.</em></p>
+            </div>
+
+            <!-- AVANTAGES / INCONVÉNIENTS -->
+            <div class="sujet-veille">
+                <h3>Avantages et Inconvénients</h3>
+                <div class="grille-comparaison">
+                    <div class="avantages-inconvenients">
+                        <h4>Avantages</h4>
+                        <ul class="liste-avantages">
+                            <li>Supprime la barrière linguistique immédiate</li>
+                            <li>Accessible à tous (Google)</li>
+                            <li>Favorise les échanges pro et perso</li>
+                            <li>Latence réduite à 1-2 secondes</li>
+                            <li>Traduction contextuelle et émotionnelle</li>
+                        </ul>
+                    </div>
+                    <div class="avantages-inconvenients">
+                        <h4>Inconvénients</h4>
+                        <ul class="liste-inconvenients">
+                            <li>Dépendance à une connexion</li>
+                            <li>Pas fiable à 100% (humour, expressions)</li>
+                            <li>Problème de confidentialité</li>
+                            <li>Appauvrissement culturel potentiel</li>
+                            <li>Latence encore perceptible</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ENJEUX ORGANISATIONNELS -->
+            <div class="sujet-veille">
+                <h3>Enjeux pour les Organisations</h3>
+                <div class="impact-emploi">
+                    <div class="categorie-impact">
+                        <h4>Entreprises</h4>
+                        <ul>
+                            <li>Réunions internationales fluides</li>
+                            <li>Moins de frais d'interprètes</li>
+                        </ul>
+                    </div>
+                    <div class="categorie-impact">
+                        <h4>Sécurité</h4>
+                        <ul>
+                            <li>Risque de fuite via le cloud</li>
+                            <li>Enjeu RGPD majeur</li>
+                        </ul>
+                    </div>
+                    <div class="categorie-impact">
+                        <h4>Tourisme</h4>
+                        <ul>
+                            <li>Accueil des touristes facilité</li>
+                            <li>Réduction des malentendus</li>
+                        </ul>
+                    </div>
+                    <div class="categorie-impact">
+                        <h4>Éducation</h4>
+                        <ul>
+                            <li>Outil pédagogique</li>
+                            <li>Aide pour les élèves en difficulté</li>
+                        </ul>
+                    </div>
+                </div>
+                <p><em>Inspiré de l'analyse du Soir et des articles Zazoom / Ouest-France.</em></p>
+            </div>
+
+            <!-- MÉTHODOLOGIE -->
+            <div class="sujet-veille">
+                <h3>Méthodologie de Veille</h3>
+                <div class="points-cles">
+                    <h4>Outils utilisés :</h4>
+                    <ul>
+                        <li><strong>Google News</strong> — alertes "traduction instantanée", "AI translation earbuds"</li>
+                        <li><strong>Sites tech :</strong> Frandroid, Les Numériques, ZDNet, TechRadar, Soundcore Blog</li>
+                        <li><strong>Sites généralistes :</strong> Ouest-France, Zazoom.it</li>
+                        <li><strong>Vidéos :</strong> YouTube (chaînes tech)</li>
+                        <li><strong>Replay radio :</strong> Franceinfo</li>
+                        <li><strong>Sites officiels :</strong> Google Blog, Apple Newsroom</li>
+                    </ul>
+                    <h4>Fréquence :</h4>
+                    <p>1 à 2 fois par semaine.</p>
+                </div>
+            </div>
+
+            <!-- CONCLUSION -->
+            <div id="conclusion" class="sujet-veille">
+                <h3>Conclusion</h3>
+                <div class="points-cles">
+                    <p><strong>Les oreillettes de traduction instantanée ne remplaceront pas l'apprentissage des langues.</strong> La langue, c'est la culture, l'émotion, l'humour... des choses qu'une IA ne maîtrise pas encore parfaitement.</p>
+                    <p>En 2026, les traducteurs simultanés sont sortis des applications pour s'intégrer dans des objets du quotidien (écouteurs, lunettes, smartphones), rendant la barrière linguistique de moins en moins infranchissable. L'avenir sera probablement une synergie entre l'IA pour la compréhension immédiate et l'apprentissage humain pour la richesse des échanges.</p>
+                    <p style="margin-top:1rem; font-size:0.85rem; color:var(--gris);">
+                        Sources : Zazoom (10/08/2026), Ouest-France (08/2026), Soundcore (25/05/2026), YouTube (16/08/2026).
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SCRIPT BURGER MENU -->
+    <script>
+        const burger = document.getElementById('burgerVeille');
+        const menu = document.getElementById('menuVeille');
+
+        burger.addEventListener('click', function() {
+            this.classList.toggle('active');
+            menu.classList.toggle('active');
+        });
+
+        // Fermer le menu en cliquant sur un lien
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                burger.classList.remove('active');
+                menu.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
