@@ -24,8 +24,8 @@
 /*  MODE CLAIR  */
 body.theme-clair {
     --primaire: #8b1a1a;
-    --arriere-plan: #f8f6f5;
-    --arriere-plan-secondaire: #f0ecea;
+    --arriere-plan: #f5ede0;
+    --arriere-plan-secondaire: #f5ede0;
     --accent: #8b1a1a;
     --accent-clair: #a83232;
     --accent-fonce: #6b1212;
@@ -39,6 +39,7 @@ body.theme-clair {
     --glass-bg: rgba(248, 246, 245, 0.55);
     --glass-border: rgba(0, 0, 0, 0.06);
 }
+
 
 /*  RESET & BASE  */
 * {
