@@ -102,7 +102,7 @@
                         <span class="stat-label">Certifications</span>
                     </div>
                     <div class="hero-stat">
-                        <span class="stat-number">5</span>
+                        <span class="stat-number">6</span>
                         <span class="stat-label">Projets</span>
                     </div>
                     <div class="hero-stat">
@@ -365,6 +365,12 @@
                     <h3>Cybersécurité & Sensibilisation</h3>
                     <p>Bases de la cybersécurité : analyse de risques, bonnes pratiques (MFA, mots de passe forts), sensibilisation des utilisateurs. Notions de RGPD, conformité et protection des données personnelles.</p>
                 </div>
+                <!-- Compétence 13 : Merise -->
+                <div class="carte-competence">
+                    <div class="icone-competence"><i class="fas fa-project-diagram"></i></div>
+                    <h3>Merise</h3>
+                    <p>Conception de systèmes d'information selon la méthode Merise : MCD (Modèle Conceptuel de Données), MLD (Modèle Logique de Données).</p>
+                </div>
             </div>
         </div>
     </section>
@@ -603,6 +609,48 @@
                         </div>
                     </div>
                 </div>
+             <!-- PROJET 6 : Medicine Mauro (Java IHM) -->
+<div class="carte-projet">
+    <div class="image-projet">
+        <img src="image/medicine_mauro_logo.svg" alt="Medicine Mauro">
+        <span class="badge-projet">Personnel</span>
+    </div>
+    <div class="contenu-projet">
+        <h3>Medicine - Suivi des traitements</h3>
+        <div class="projet-details">
+            <div class="projet-section">
+                <h4>Contexte & Besoins</h4>
+                <p>Application Java sur mesure pour mon grand-père, qui a besoin d'un suivi quotidien de ses médicaments. L'objectif était de créer une interface simple, lisible et intuitive, avec une horloge en italien et des rappels visuels pour chaque prise.</p>
+            </div>
+            <div class="projet-section">
+                <h4>Langages & Outils</h4>
+                <div class="tech-projet">
+                    <span>Java 8+</span>
+                    <span>Swing</span>
+                    <span>Gson</span>
+                    <span>JSON</span>
+                    <span>JTable</span>
+                </div>
+            </div>
+            <div class="projet-section">
+                <h4>Travail réalisé</h4>
+                <ul class="projet-liste">
+                    <li>Conception d'une interface en plein écran aux couleurs de l'Italie (bleu Azzurro et rouge bordeaux)</li>
+                    <li>Horloge en temps réel affichée en italien (Locale.ITALIAN)</li>
+                    <li>Cases à cocher pour valider la prise de chaque médicament</li>
+                    <li>Persistance des données avec Gson (fichier JSON) : les cases cochées sont sauvegardées automatiquement</li>
+                    <li>Détection du nouveau jour : réinitialisation automatique de toutes les cases à zéro chaque matin</li>
+                    <li>Gestion spécifique du Calcitriolo (uniquement les lundis, mercredis et vendredis)</li>
+                    <li>Accessibilité optimisée pour les seniors : police très grande (24px), lignes élargies (50px), cases centrées</li>
+                </ul>
+            </div>
+            <div class="projet-section">
+                <h4>Bilan</h4>
+                <p>Ce projet m'a permis de créer une application utile au quotidien pour mon grand-père, tout en approfondissant mes compétences en Java Swing, en persistance de données (JSON) et en conception d'interfaces ergonomiques pour un public spécifique.</p>
+            </div>
+        </div>
+    </div>
+</div>   
             </div>
         </div>
     </section>
@@ -984,12 +1032,7 @@
         </div>
     </section>
 
-    <!-- 
-        SECTION CONTACT
-        Je propose un formulaire de contact pour que les visiteurs puissent m'écrire.
-        Les informations de contact (email, localisation, réseaux sociaux) sont aussi affichées.
-    -->
-    <section id="contact" class="contact">
+   <section id="contact" class="contact">
         <div class="conteneur">
             <div class="section-header">
                 <span class="section-number">12</span>
@@ -997,34 +1040,57 @@
                 <div class="section-line"></div>
                 <p class="section-subtitle">Un projet, un stage ou simplement envie d'échanger ?</p>
             </div>
-            <div class="contact-wrapper">
-                <!-- Informations de contact -->
-                <div class="contact-info">
-                    <h3>Parlons de votre projet</h3>
-                    <p>Je suis ouverte aux opportunités et aux collaborations. Écrivez-moi, je vous répondrai avec plaisir.</p>
-                    <div class="contact-details">
-                        <div class="contact-detail">
-                            <i class="fas fa-envelope"></i>
-                            <span>lucreziaogah@gmail.com</span>
-                        </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-envelope"></i>
-                            <span>lucreziaogah.pro@gmail.com</span>
-                        </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Seine et Marne, France</span>
-                            <span>Isère, France</span>
-                        </div>
+        <div class="contact-wrapper">
+            <!-- Informations de contact -->
+            <div class="contact-info">
+                <h3>Parlons de votre projet</h3>
+                <p>Je suis ouverte aux opportunités et aux collaborations. Écrivez-moi, je vous répondrai avec plaisir.</p>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <span>lucreziaogah@gmail.com</span>
                     </div>
-                    <div class="contact-social">
-                        <a href="https://www.instagram.com/lyo.dev_/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/lucrezia-ogah-a3b02b330/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://github.com/Lyo563" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <span>lucreziaogah.pro@gmail.com</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Seine et Marne, France</span>
+                        <span>Isère, France</span>
                     </div>
                 </div>
+                <div class="contact-social">
+                    <a href="https://www.instagram.com/lyo.dev_/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/lucrezia-ogah-a3b02b330/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Lyo563" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
             </div>
-        </div>
+                <!-- Formulaire de contact fonctionnel avec Formsubmit -->
+                <form id="formContact" class="contact-form" action="https://formsubmit.co/lucreziaogah.pro@gmail.com" method="POST">
+                    <!-- Champs cachés pour Formsubmit -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <div class="groupe-form">
+                        <label for="nom">Nom <span class="required">*</span></label>
+                        <input type="text" id="nom" name="nom" class="controle-form" required>
+                    </div>
+                    <div class="groupe-form">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" class="controle-form" required>
+                    </div>
+                    <div class="groupe-form">
+                        <label for="objet">Objet</label>
+                        <input type="text" id="objet" name="objet" class="controle-form">
+                    </div>
+                    <div class="groupe-form">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" class="controle-form" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-principal">Envoyer <i class="fas fa-paper-plane"></i></button>
+                        </form>
+                </div>
+            </div>
     </section>
 
     <!-- 
