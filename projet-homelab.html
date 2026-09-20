@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homelab - Projet | Lucrezia Ogah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/Lyo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="conteneur">
+            <nav>
+                <div class="logo">
+                    <img src="image/Lyo.png" alt="Logo LYO">
+                </div>
+                <ul class="liens-nav">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#projets">Projets</a></li>
+                    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-detail-projet">
+        <div class="conteneur">
+            <a href="index.html#projets" class="btn-retour">
+                <i class="fas fa-arrow-left"></i> Retour aux projets
+            </a>
+
+            <div class="detail-projet-header">
+                <h1>Homelab - Serveur Debian</h1>
+                <div class="detail-projet-meta">
+                    <span><i class="fas fa-user"></i> Personnel</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2026</span>
+                    <span><i class="fab fa-linux"></i> Debian / Docker</span>
+                </div>
+            </div>
+
+            <img src="image/HpDebian.png" alt="Homelab" class="detail-projet-image">
+
+            <div class="detail-projet-contenu">
+                <h2>Contexte & Besoins</h2>
+                <p>Recycler un ancien PC en serveur pour héberger mes propres services, apprendre l'administration Linux et la conteneurisation, et développer des compétences en infrastructure.</p>
+
+                <h2>Langages & Outils</h2>
+                <ul>
+                    <li>Debian 12</li>
+                    <li>Bash</li>
+                    <li>Docker</li>
+                    <li>SSH (clés ED25519)</li>
+                    <li>UFW (pare-feu)</li>
+                    <li>Tailscale (VPN)</li>
+                </ul>
+
+                <h2>Travail réalisé</h2>
+                <ul>
+                    <li>Installation et configuration de Debian 12</li>
+                    <li>Déploiement de 10 services Docker (Heimdall, Uptime Kuma, Portainer, Nextcloud, Jellyfin, Pi-hole, Immich, n8n, Nginx Proxy, Tailscale)</li>
+                    <li>Sécurisation SSH (clés ED25519) et pare-feu UFW</li>
+                    <li>Mise en place d'un VPN Tailscale pour l'accès externe</li>
+                </ul>
+
+                <h2>Bilan</h2>
+                <p>Ce projet m'a permis de monter en compétence en administration Linux, en sécurité réseau et en orchestration de conteneurs. J'ai appris à gérer une infrastructure complète de manière autonome.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="conteneur">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lucrezia Ogah - Tous droits réservés.</p>
+                <a href="#" class="retour-haut"><i class="fas fa-chevron-up"></i> Retour en haut</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const icon = themeToggle.querySelector('i');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('theme-clair');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('theme-clair');
+            if (document.body.classList.contains('theme-clair')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

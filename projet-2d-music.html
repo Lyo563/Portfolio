@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Music - Projet | Lucrezia Ogah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/Lyo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="conteneur">
+            <nav>
+                <div class="logo">
+                    <img src="image/Lyo.png" alt="Logo LYO">
+                </div>
+                <ul class="liens-nav">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#projets">Projets</a></li>
+                    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-detail-projet">
+        <div class="conteneur">
+            <a href="index.html#projets" class="btn-retour">
+                <i class="fas fa-arrow-left"></i> Retour aux projets
+            </a>
+
+            <div class="detail-projet-header">
+                <h1>2D Music - Gestion de playlist</h1>
+                <div class="detail-projet-meta">
+                    <span><i class="fas fa-music"></i> Application</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2026</span>
+                    <span><i class="fab fa-java"></i> Java Swing</span>
+                </div>
+            </div>
+
+            <img src="image/music_app_cover_2d_music_.svg" alt="2D Music" class="detail-projet-image">
+
+            <div class="detail-projet-contenu">
+                <h2>Contexte & Besoins</h2>
+                <p>Application Java avec IHM Swing développée dans le cadre du BTS SIO. L'objectif était de créer un gestionnaire de playlist musicale avec authentification, CRUD complet (Consultation, Ajout, Modification, Suppression, Recherche) et une architecture "une seule JFrame".</p>
+
+                <h2>Langages & Outils</h2>
+                <ul>
+                    <li>Java 8+</li>
+                    <li>Java Swing (JFrame, JPanel, JDialog, JTable)</li>
+                    <li>Collections (ArrayList)</li>
+                    <li>Héritage (Podcast extends Chanson)</li>
+                </ul>
+
+                <h2>Travail réalisé</h2>
+                <ul>
+                    <li>Connexion sécurisée (login : logah / mot de passe : 1234)</li>
+                    <li>Consultation des musiques dans une JTable avec DefaultTableModel</li>
+                    <li>Ajout d'une chanson (titre, artiste, durée)</li>
+                    <li>Modification d'une chanson sélectionnée</li>
+                    <li>Suppression par saisie du titre</li>
+                    <li>Recherche insensible à la casse avec equalsIgnoreCase()</li>
+                    <li>Héritage avec la classe Podcast (extends Chanson)</li>
+                    <li>Collection ArrayList pour stocker les musiques</li>
+                    <li>Charte graphique : bordeaux (#800020) et beige clair</li>
+                </ul>
+
+                <h2>Bilan</h2>
+                <p>Ce projet m'a permis de maîtriser la création d'interfaces graphiques en Java Swing, la programmation orientée objet (héritage, collections, encapsulation) et l'architecture à une seule JFrame avec changement de panels.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="conteneur">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lucrezia Ogah - Tous droits réservés.</p>
+                <a href="#" class="retour-haut"><i class="fas fa-chevron-up"></i> Retour en haut</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const icon = themeToggle.querySelector('i');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('theme-clair');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('theme-clair');
+            if (document.body.classList.contains('theme-clair')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

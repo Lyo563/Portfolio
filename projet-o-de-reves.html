@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ô de rêves - Projet | Lucrezia Ogah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/Lyo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="conteneur">
+            <nav>
+                <div class="logo">
+                    <img src="image/Lyo.png" alt="Logo LYO">
+                </div>
+                <ul class="liens-nav">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#projets">Projets</a></li>
+                    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-detail-projet">
+        <div class="conteneur">
+            <a href="index.html#projets" class="btn-retour">
+                <i class="fas fa-arrow-left"></i> Retour aux projets
+            </a>
+
+            <div class="detail-projet-header">
+                <h1>Ô de rêves</h1>
+                <div class="detail-projet-meta">
+                    <span><i class="fas fa-shopping-cart"></i> PPE</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2026</span>
+                    <span><i class="fab fa-php"></i> PHP / MySQL</span>
+                </div>
+            </div>
+
+            <img src="image/O de reves.png" alt="Ô de rêves" class="detail-projet-image">
+
+            <div class="detail-projet-contenu">
+                <h2>Contexte & Besoins</h2>
+                <p>Projet de création d'une boutique en ligne fictive dans le cadre du BTS SIO. L'objectif était de développer un site e-commerce complet avec gestion des utilisateurs, catalogue produits, panier et paiement sécurisé.</p>
+
+                <h2>Langages & Outils</h2>
+                <ul>
+                    <li>HTML5 / CSS3</li>
+                    <li>JavaScript</li>
+                    <li>PHP</li>
+                    <li>MySQL / phpMyAdmin</li>
+                    <li>FPDF (génération PDF)</li>
+                </ul>
+
+                <h2>Travail réalisé</h2>
+                <ul>
+                    <li>Conception de la base de données (utilisateurs, produits, commandes)</li>
+                    <li>Développement du front-end (HTML/CSS/JS) responsive</li>
+                    <li>Développement du back-end en PHP (connexion, inscription, panier)</li>
+                    <li>Gestion de session et sécurisation des données</li>
+                    <li>Panier en variable de session</li>
+                    <li>Back-office administrateur (gestion clients, produits, commandes)</li>
+                    <li>Génération de facture PDF avec FPDF</li>
+                    <li>Pages CGV et mentions légales</li>
+                </ul>
+
+                <h2>Bilan</h2>
+                <p>Ce PPE m'a permis d'approfondir mes compétences en PHP, MySQL et JavaScript, ainsi que de comprendre les enjeux de sécurité d'une application web e-commerce. J'ai également appris à structurer un projet complet avec un back-office.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="conteneur">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lucrezia Ogah - Tous droits réservés.</p>
+                <a href="#" class="retour-haut"><i class="fas fa-chevron-up"></i> Retour en haut</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const icon = themeToggle.querySelector('i');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('theme-clair');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('theme-clair');
+            if (document.body.classList.contains('theme-clair')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

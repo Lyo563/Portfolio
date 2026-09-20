@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logah Tubes - Projet | Lucrezia Ogah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/Lyo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="conteneur">
+            <nav>
+                <div class="logo">
+                    <img src="image/Lyo.png" alt="Logo LYO">
+                </div>
+                <ul class="liens-nav">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#projets">Projets</a></li>
+                    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-detail-projet">
+        <div class="conteneur">
+            <a href="index.html#projets" class="btn-retour">
+                <i class="fas fa-arrow-left"></i> Retour aux projets
+            </a>
+
+            <div class="detail-projet-header">
+                <h1>Logah Tubes</h1>
+                <div class="detail-projet-meta">
+                    <span><i class="fas fa-user"></i> Personnel</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2026</span>
+                    <span><i class="fab fa-python"></i> Python / Flask</span>
+                </div>
+            </div>
+
+            <img src="image/logah_tubes.svg" alt="Logah Tubes" class="detail-projet-image">
+
+            <div class="detail-projet-contenu">
+                <h2>Contexte & Besoins</h2>
+                <p>Créer un outil pratique pour télécharger l'audio des vidéos YouTube en MP3, en utilisant Python et Flask. Un projet personnel pour allier passion pour la musique et développement web.</p>
+
+                <h2>Langages & Outils</h2>
+                <ul>
+                    <li>Python</li>
+                    <li>Flask (framework web)</li>
+                    <li>yt-dlp (téléchargement YouTube)</li>
+                    <li>FFmpeg (conversion audio)</li>
+                    <li>HTML5 / CSS3 / JavaScript</li>
+                    <li>Docker</li>
+                </ul>
+
+                <h2>Travail réalisé</h2>
+                <ul>
+                    <li>Développement d'une API Flask avec yt-dlp</li>
+                    <li>Conversion audio en MP3 (192 kbps) avec FFmpeg</li>
+                    <li>Interface utilisateur minimaliste avec HTML/CSS/JS</li>
+                    <li>Téléchargement asynchrone avec JavaScript</li>
+                    <li>Gestion des erreurs et nettoyage des URLs</li>
+                </ul>
+
+                <h2>Bilan</h2>
+                <p>Ce projet m'a permis de découvrir Python et Flask, de comprendre le fonctionnement des APIs et de maîtriser l'intégration de bibliothèques externes. Une belle expérience de développement full-stack.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="conteneur">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lucrezia Ogah - Tous droits réservés.</p>
+                <a href="#" class="retour-haut"><i class="fas fa-chevron-up"></i> Retour en haut</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const icon = themeToggle.querySelector('i');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('theme-clair');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('theme-clair');
+            if (document.body.classList.contains('theme-clair')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

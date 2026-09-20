@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBSunrise - Projet | Lucrezia Ogah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/Lyo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="conteneur">
+            <nav>
+                <div class="logo">
+                    <img src="image/Lyo.png" alt="Logo LYO">
+                </div>
+                <ul class="liens-nav">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#projets">Projets</a></li>
+                    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-detail-projet">
+        <div class="conteneur">
+            <a href="index.html#projets" class="btn-retour">
+                <i class="fas fa-arrow-left"></i> Retour aux projets
+            </a>
+
+            <div class="detail-projet-header">
+                <h1>KBSunrise.org</h1>
+                <div class="detail-projet-meta">
+                    <span><i class="fas fa-briefcase"></i> Stage 1ère année</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2026</span>
+                    <span><i class="fab fa-wordpress"></i> WordPress</span>
+                </div>
+            </div>
+
+            <img src="image/Kisoro Batwa Sunrise (2).png" alt="KBSunrise" class="detail-projet-image">
+
+            <div class="detail-projet-contenu">
+                <h2>Contexte & Besoins</h2>
+                <p>L'association <strong>Kisoro Batwa Sunrise</strong> avait besoin d'un site web professionnel pour promouvoir ses actions en Ouganda et faciliter la collecte de dons. Le site devait être multilingue, optimisé pour le référencement et facile à administrer.</p>
+
+                <h2>Langages & Outils</h2>
+                <ul>
+                    <li>WordPress</li>
+                    <li>Elementor (Page Builder)</li>
+                    <li>HTML5 / CSS3</li>
+                    <li>PHP 8.3 / MySQL</li>
+                    <li>Yoast SEO, TinyPNG, Akismet</li>
+                    <li>OVH Pro (hébergement)</li>
+                </ul>
+
+                <h2>Travail réalisé</h2>
+                <ul>
+                    <li>Analyse des besoins du client et rédaction du cahier des charges</li>
+                    <li>Définition de l'architecture du site (5 pages)</li>
+                    <li>Création de maquettes visuelles et charte graphique</li>
+                    <li>Développement des 5 pages avec Elementor</li>
+                    <li>Optimisation SEO avec Yoast</li>
+                    <li>Sécurité anti-spam (Akismet) et certificat SSL</li>
+                    <li>Configuration de l'hébergement OVH Pro et migration</li>
+                    <li>Compression de 176 photos via TinyPNG API</li>
+                </ul>
+
+                <h2>Bilan</h2>
+                <p>Ce stage m'a permis de gérer un projet web complet de A à Z : analyse, développement, sécurité, SEO et mise en production. J'ai appris à travailler en autonomie et à communiquer avec un client.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="conteneur">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lucrezia Ogah - Tous droits réservés.</p>
+                <a href="#" class="retour-haut"><i class="fas fa-chevron-up"></i> Retour en haut</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const icon = themeToggle.querySelector('i');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('theme-clair');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('theme-clair');
+            if (document.body.classList.contains('theme-clair')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

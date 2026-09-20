@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Mauro - Projet | Lucrezia Ogah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/Lyo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="conteneur">
+            <nav>
+                <div class="logo">
+                    <img src="image/Lyo.png" alt="Logo LYO">
+                </div>
+                <ul class="liens-nav">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#projets">Projets</a></li>
+                    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-detail-projet">
+        <div class="conteneur">
+            <a href="index.html#projets" class="btn-retour">
+                <i class="fas fa-arrow-left"></i> Retour aux projets
+            </a>
+
+            <div class="detail-projet-header">
+                <h1>Medicine - Suivi des traitements</h1>
+                <div class="detail-projet-meta">
+                    <span><i class="fas fa-user"></i> Personnel</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2026</span>
+                    <span><i class="fab fa-java"></i> Java Swing</span>
+                </div>
+            </div>
+
+            <img src="image/medicine_mauro_logo.svg" alt="Medicine Mauro" class="detail-projet-image">
+
+            <div class="detail-projet-contenu">
+                <h2>Contexte & Besoins</h2>
+                <p>Application Java sur mesure pour mon grand-père, qui a besoin d'un suivi quotidien de ses médicaments. L'objectif était de créer une interface simple, lisible et intuitive, avec une horloge en italien et des rappels visuels pour chaque prise.</p>
+
+                <h2>Langages & Outils</h2>
+                <ul>
+                    <li>Java 8+</li>
+                    <li>Java Swing (IHM)</li>
+                    <li>Gson (persistance JSON)</li>
+                    <li>JTable pour l'affichage des médicaments</li>
+                </ul>
+
+                <h2>Travail réalisé</h2>
+                <ul>
+                    <li>Conception d'une interface en plein écran aux couleurs de l'Italie</li>
+                    <li>Horloge en temps réel affichée en italien (Locale.ITALIAN)</li>
+                    <li>Cases à cocher pour valider la prise de chaque médicament</li>
+                    <li>Persistance des données avec Gson : les cases cochées sont sauvegardées automatiquement</li>
+                    <li>Détection du nouveau jour : réinitialisation automatique de toutes les cases chaque matin</li>
+                    <li>Gestion spécifique du Calcitriolo (uniquement lundis, mercredis et vendredis)</li>
+                    <li>Accessibilité optimisée pour les seniors : police 24px, lignes 50px, cases centrées</li>
+                </ul>
+
+                <h2>Bilan</h2>
+                <p>Ce projet m'a permis de créer une application utile au quotidien pour mon grand-père, tout en approfondissant mes compétences en Java Swing, en persistance de données (JSON) et en conception d'interfaces ergonomiques pour un public spécifique.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="conteneur">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lucrezia Ogah - Tous droits réservés.</p>
+                <a href="#" class="retour-haut"><i class="fas fa-chevron-up"></i> Retour en haut</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const icon = themeToggle.querySelector('i');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('theme-clair');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('theme-clair');
+            if (document.body.classList.contains('theme-clair')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>
