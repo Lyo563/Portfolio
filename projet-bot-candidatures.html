@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot Candidatures - Projet | Lucrezia Ogah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/Lyo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="conteneur">
+            <nav>
+                <div class="logo">
+                    <img src="image/Lyo.png" alt="Logo LYO">
+                </div>
+                <ul class="liens-nav">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#projets">Projets</a></li>
+                    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-detail-projet">
+        <div class="conteneur">
+            <a href="index.html#projets" class="btn-retour">
+                <i class="fas fa-arrow-left"></i> Retour aux projets
+            </a>
+
+            <div class="detail-projet-header">
+                <h1>Bot Python - Candidatures</h1>
+                <div class="detail-projet-meta">
+                    <span><i class="fas fa-user"></i> Personnel</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2026</span>
+                    <span><i class="fab fa-python"></i> Python / Gmail API</span>
+                </div>
+            </div>
+
+            <!-- IMAGE AVEC FOND BLANC -->
+            <img src="image/Bot-Candidatures.svg" alt="Bot Candidatures" class="detail-projet-image" style="object-fit: contain; background: #ffffff; padding: 3rem;">
+
+            <div class="detail-projet-contenu">
+                <h2>Contexte & Besoins</h2>
+                <p>Automatiser l'envoi de candidatures spontanées pour des jobs étudiants, en ciblant des entreprises précises. L'objectif était de gagner du temps tout en gardant un envoi <strong>personnalisé et responsable</strong> (vérification MX, délai entre envois, historique anti-doublon).</p>
+
+                <h2>Langages & Outils</h2>
+                <ul>
+                    <li>Python 3</li>
+                    <li>Gmail API (OAuth2)</li>
+                    <li>dnspython (vérification MX)</li>
+                    <li>CSV (historique des envois)</li>
+                    <li>EmailMessage (pièces jointes MIME)</li>
+                    <li>Google Auth (token.json, credentials.json)</li>
+                </ul>
+
+                <h2>Travail réalisé</h2>
+                <ul>
+                    <li>Vérification DNS/MX des adresses avant envoi (dnspython)</li>
+                    <li>Cache DNS pour éviter les requêtes répétées</li>
+                    <li>Authentification Gmail via OAuth2 (token rafraîchi automatiquement)</li>
+                    <li>Envoi d'emails HTML avec CV en pièce jointe (EmailMessage)</li>
+                    <li>Suivi des envois dans un fichier CSV (statuts : sent, invalid, error)</li>
+                    <li>Délai de 10 secondes entre chaque envoi</li>
+                    <li>Gestion des erreurs et reprise au prochain lancement</li>
+                    <li>Nettoyage des URLs et validation des emails</li>
+                </ul>
+
+                <h2>Défis techniques relevés</h2>
+                <ul>
+                    <li><strong>Vérification MX :</strong> éviter d'envoyer à des adresses invalides en interrogeant les serveurs DNS</li>
+                    <li><strong>Cache DNS :</strong> optimisation des performances quand plusieurs entreprises partagent le même domaine</li>
+                    <li><strong>OAuth2 :</strong> gestion du rafraîchissement automatique du token Gmail</li>
+                    <li><strong>Anti-doublon :</strong> lecture et écriture dans un fichier CSV pour ne jamais renvoyer au même contact</li>
+                </ul>
+
+                <h2>Bilan</h2>
+                <p>Ce projet m'a permis de maîtriser l'API Gmail, OAuth2, les protocoles SMTP/MIME et la vérification DNS. J'ai appris à concevoir un outil <strong>fiable et éthique</strong> : pas d'envoi massif, pas de spam, uniquement des adresses ciblées et vérifiées.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="conteneur">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lucrezia Ogah - Tous droits réservés.</p>
+                <a href="#" class="retour-haut"><i class="fas fa-chevron-up"></i> Retour en haut</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const icon = themeToggle.querySelector('i');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('theme-clair');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('theme-clair');
+            if (document.body.classList.contains('theme-clair')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogahMusic - Projet | Lucrezia Ogah</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/Lyo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="main-header">
+        <div class="conteneur">
+            <nav>
+                <div class="logo">
+                    <img src="image/Lyo.png" alt="Logo LYO">
+                </div>
+                <ul class="liens-nav">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="index.html#projets">Projets</a></li>
+                    <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Changer le thème">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-detail-projet">
+        <div class="conteneur">
+            <a href="index.html#projets" class="btn-retour">
+                <i class="fas fa-arrow-left"></i> Retour aux projets
+            </a>
+
+            <div class="detail-projet-header">
+                <h1>LogahMusic - Plateforme musicale</h1>
+                <div class="detail-projet-meta">
+                    <span><i class="fas fa-user"></i> Personnel</span>
+                    <span><i class="fas fa-calendar-alt"></i> 2026</span>
+                    <span><i class="fab fa-php"></i> PHP / MySQL</span>
+                </div>
+            </div>
+
+            <!-- IMAGE AVEC FOND VIOLET SOMBRE FONDU -->
+            <img src="image/LogahMusic.jpg" alt="LogahMusic" class="detail-projet-image" style="object-fit: contain; background: #11051b; padding: 2rem;">
+
+            <div class="detail-projet-contenu">
+                <h2>Contexte & Besoins</h2>
+                <p>Créer une alternative locale à Spotify/Apple Music pour organiser, importer et écouter ma propre bibliothèque audio. Un projet ambitieux pour maîtriser le développement web full-stack, l'audio en JavaScript et l'interfaçage avec Python.</p>
+
+                <h2>Langages & Outils</h2>
+                <ul>
+                    <li>PHP 8 </li>
+                    <li>MySQL </li>
+                    <li>JavaScript (Fetch API, Drag & Drop, Web Audio)</li>
+                    <li>HTML5 / CSS3 (Flexbox, Grid, Glassmorphism)</li>
+                    <li>Python 3</li>
+                    <li>FFmpeg (conversion audio)</li>
+                    <li>yt-dlp (extraction YouTube)</li>
+                </ul>
+
+                <h2>Travail réalisé</h2>
+                <ul>
+                    <li><strong>Interface Glassmorphism</strong> avec sidebar dynamique et lecteur fixe</li>
+                    <li><strong>Lecteur audio persistant</strong> (sessionStorage + Web Audio API) : la musique ne s'arrête pas entre les pages</li>
+                    <li><strong>AJAX complet</strong> : favoris, recherche instantanée, ajout aux playlists sans rechargement</li>
+                    <li><strong>Drag & Drop</strong> pour réorganiser les morceaux des playlists</li>
+                    <li><strong>Back-office admin</strong> : statistiques, CRUD utilisateurs, gestion des rôles (Admin/User)</li>
+                    <li><strong>Import YouTube</strong> : PHP appelle Python (yt-dlp + FFmpeg) pour extraire, convertir en MP3 et injecter en BDD</li>
+                    <li><strong>Organisation sur mesure</strong> : albums avec pochettes personnalisées</li>
+                    <li><strong>Sécurité</strong> : PDO préparé, htmlspecialchars, sessions</li>
+                </ul>
+
+                <h2>Défis techniques relevés</h2>
+                <ul>
+                    <li><strong>Persistance du lecteur audio :</strong> comment ne pas couper la musique lors d'un changement de page en PHP ? Solution : sauvegarde de l'état (temps, source, file d'attente) dans le sessionStorage et rechargement au DOMContentLoaded</li>
+                    <li><strong>Communication inter-langages :</strong> faire dialoguer PHP et Python pour exécuter des tâches lourdes (téléchargement/conversion) et récupérer le résultat en JSON via shell_exec()</li>
+                    <li><strong>Gestion des protections YouTube :</strong> contournement des erreurs "403 Forbidden" en implémentant la gestion des cookies (cookies.txt) et l'utilisation de clients alternatifs via yt-dlp</li>
+                    <li><strong>Sécurité :</strong> protection contre les failles XSS (htmlspecialchars) et les injections SQL (requêtes préparées PDO)</li>
+                </ul>
+
+                <h2>Bilan</h2>
+                <p>Ce projet m'a fait passer au niveau supérieur en full-stack. J'ai résolu des défis techniques complexes : persistance audio entre pages, communication inter-langages, contournement des protections YouTube. C'est mon projet le plus complet à ce jour, mêlant PHP, MySQL, JavaScript avancé et Python.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="conteneur">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Lucrezia Ogah - Tous droits réservés.</p>
+                <a href="#" class="retour-haut"><i class="fas fa-chevron-up"></i> Retour en haut</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const icon = themeToggle.querySelector('i');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('theme-clair');
+            icon.classList.replace('fa-moon', 'fa-sun');
+        }
+        themeToggle.addEventListener('click', function() {
+            document.body.classList.toggle('theme-clair');
+            if (document.body.classList.contains('theme-clair')) {
+                icon.classList.replace('fa-moon', 'fa-sun');
+                localStorage.setItem('theme', 'light');
+            } else {
+                icon.classList.replace('fa-sun', 'fa-moon');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
+</body>
+</html>
