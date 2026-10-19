@@ -274,9 +274,8 @@ body.theme-clair header::after {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0.25rem 0;
-    position: relative;
+    align-items: center; /* C'est ça qui centre parfaitement ton logo et ton menu sur la même ligne */
+    padding: 0.25rem 0; /* Tu peux augmenter ce padding si tu veux plus d'espace */
 }
 
 .logo {
@@ -287,9 +286,9 @@ nav {
 }
 
 .logo img {
-    width: 44px;
-    height: 44px;
-    border-radius: 10px;
+    width: 80px; 
+    height: 80px;
+    border-radius: 12px;
     transition: var(--transition);
 }
 
